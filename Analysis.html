@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            padding: 50px;
+            margin-top: 150px;
+            color: #070b17;
+            background-color: #E2D1F9;
+        }
+    </style>
+</head>
+
+<body align="center" id="body" bgcolor="#F96167">
+    <h2 style="margin-top: 80px;">SCORE ANALYTICS</h2>
+    <table id="table" align="center" border="5">
+        <tr>
+            <td>
+                <h2 style="padding: 8px;">Highest Score:12</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2 id="h11" style="padding: 8px;"></h2>
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+        var actualscore = localStorage.getItem("score")
+        var h1 = document.getElementById("h11")
+        console.log(actualscore)
+        h1.textContent = " Score:" + actualscore
+        alert("Your Score is " + actualscore)
+    </script>
+</body>
+
+</html>

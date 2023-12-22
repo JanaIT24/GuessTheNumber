@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #body {
+            padding-top: 150px;
+        }
+
+        #guess {
+            border-radius: 5px;
+            padding: 15px;
+            width: 200px;
+        }
+
+        button {
+            border-radius: 3px;
+            width: 80px;
+            padding: 8px;
+            background-color: #2F3C7E;
+        }
+
+        .container {
+            border: 3px solid blue;
+            padding: 50px;
+        }
+
+        .hos {
+            display: flex;
+            margin-left: 100px;
+            flex-direction: row;
+            justify-content: left;
+        }
+    </style>
+</head>
+
+<body id="body" align="center" bgcolor="#FBEAEB">
+    <div class="container">
+        <h1>Guess The Number Between 1 To 10</h1>
+        <br>
+        <input type="text" id="guess"><br><br><br>
+        <button onclick="rand()">Check</button><br><br>
+        <h3 id="res">Result</h3>
+        <div class="hos">
+            <h3 id="score">Score:10</h3>
+            <button onclick="Analytics()" style="margin-left: 350px;">Analytics</button>
+            <br><br>
+        </div>
+    </div>
+    <script>
+        var guess = document.getElementById("guess")
+        var result = document.getElementById("res")
+        var score1 = document.getElementById("score")
+        var randomnum = Math.floor(Math.random() * 10) + 1
+        score = 10
+        function rand() {
+
+            var guessnum = guess.value
+            if (randomnum == guessnum) {
+                result.textContent = "Result:Right"
+                score = score + 1
+                score1.textContent = "Score:" + score
+                alert("CONGRATS YOU WON !!!")
+            }
+            else {
+                result.textContent = "Result:wrong"
+                score = score - 1
+                score1.textContent = "Score:" + score
+            }
+
+
+        }
+        function Analytics() {
+            localStorage.setItem("score", score)
+            window.location.href = "Analysis.html"
+        }
+    </script>
+</body>
+
+</html>
